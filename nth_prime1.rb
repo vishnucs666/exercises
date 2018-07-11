@@ -1,25 +1,28 @@
+# program to find nth prime
 class Prime
   attr_reader :primes
 
-  def nth(n)
-    raise ArgumentError.new('N must be positive') if n < 1
+  def nth(nnn)
+    raise ArgumentError, 'N must be positive' if nnn < 1
 
     primes ||= [2, 3]
     candidate = primes.last
-    puts candidate
-    puts primes.length
+    n(primes, candidate, nnn)
+  end
 
-    while n > primes.length
+  private
+
+  def n(primes, candidate, nnn)
+    while nnn > primes.length
       candidate += 2
 
-      unless primes.any? { |prime| candidate % prime == 0 }
+      unless primes.any? { |prime| (candidate % prime).zero? }
         primes.push(candidate)
       end
     end
-
-    puts primes[n - 1]
+    puts primes[nnn - 1]
   end
 end
-k=gets.to_i
-p=Prime.new
+k = gets.to_i
+p = Prime.new
 p.nth(k)
