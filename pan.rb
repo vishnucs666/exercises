@@ -17,7 +17,7 @@ class Pan
     if s == 26
       puts 'its a pangram'
     else
-      puts 'its nota pangram'
+      puts 'its not a pangram'
     end
   end
 end
