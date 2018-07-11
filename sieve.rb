@@ -1,26 +1,25 @@
+# program for prime numbers
 class Sie
-  def self.s(n)
-    f=0
-    d=0
-    s=Array.new
-    (2..n).each do |i|
-      (2..i/2).each do |k|
-        if i%k==0          
-          f=1
-        end
-      end
-      if f==1
-        f=0        
-      else
-        s[d]=i
-        d=d+1
-      end
+  def s(nnn)
+    f = 0
+    s = []
+    (2..nnn).each do |i|
+      k(i, f, s)
     end
-  puts "Prime numbers are=#{s}"  
-  print d   
+  end
+
+  def k(iii, fff, _sss)
+    (2..iii / 2).each do |k|
+      fff = 1 if (iii % k).zero? # == 0
+    end
+    if fff == 1
+      fff = 0
+    else
+      puts iii
+    end
   end
 end
-k=gets.chomp.to_i
-#print k
-Sie.s(k)
-
+k = gets.chomp.to_i
+# print k
+e = Sie.new
+e.s(k)
