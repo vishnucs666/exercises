@@ -1,24 +1,19 @@
+# program to find raindrops
 class Raindrops
-  
-  def self.convert(number)
-    result = " "
-    if number.to_i%3 == 0
-    result << "Pling"
-    #puts "hello"
-    # if number % 3 == 0
-    elsif number.to_i % 5 == 0
-    result << "Plang"
-    # if number % 5 == 0
-    elsif number.to_i % 7 == 0
-    result << "Plong"
-    end# if number % 7 == 0
-
-    #result = number.to_s if result.empty?
+  # rubocop:disable Metrics/AbcSize
+  def self.conv(num1)
+    # rubocop:enable Metrics/AbcSize
+    result = ' '
+    if (num1.to_i % 3).zero?
+      result << 'Pling'
+    elsif (num1.to_i % 5).zero?
+      result << 'Plang'
+    elsif (num1.to_i % 7).zer0?
+      result << 'Plong'
+    end
+    result = num1.to_s if result.empty?
     puts result
-    #puts "hello" 
   end
-  
 end
-k=gets.chomp
-Raindrops.convert(k)
-
+k = gets.chomp
+Raindrops.conv(k)
