@@ -1,20 +1,26 @@
+# program to find pangram
 class Pan
-  def self.pa(k)
-    s=k.scan /\w/
-    h=Hash.new
+  def pa(kkk)
+    s = kkk.scan(/\w/)
+    h = {}
     s.each do |x|
-      if x==x.capitalize
-         x=x.downcase
-      end        
-      h[x]=x
-    end 
-    s=h.length
-    if s==26
-      puts "its a pangram"
+      x = x.downcase if x == x.capitalize
+      h[x] = x
+    end
+    can(h)
+  end
+
+  private
+
+  def can(hhh)
+    s = hhh.length
+    if s == 26
+      puts 'its a pangram'
     else
-      puts "its nota pangram"
-    end    
+      puts 'its nota pangram'
+    end
   end
 end
-k=gets.chomp
-Pan.pa(k)
+k = gets.chomp
+p = Pan.new
+p.pa(k)
