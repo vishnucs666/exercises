@@ -1,20 +1,31 @@
+# program for rna transformation
 class Rna
- def r(k)
-   s=k.length
-    for i in 0..s do
-      if k[i]=="G"
-        k[i]="C"
-      elsif k[i]=="C"
-        k[i]="G"
-      elsif k[i]=="T"
-        k[i]="A"
-      elsif k[i]=="A"
-        k[i]="U"
-      end
+  def r(kkk)
+    s = kkk.length
+    ka(s, kkk)
+    puts kkk
+  end
+
+  private
+
+  def ka(sss, kkk)
+    (0..sss).each do |i|
+      ba(kkk, i)
     end
- puts k
- end
+  end
+
+  def ba(kkk, iii)
+    if kkk[iii] == 'G'
+      kkk[iii] = 'C'
+    elsif kkk[iii] == 'C'
+      kkk[iii] = 'G'
+    elsif kkk[iii] == 'T'
+      kkk[iii] = 'A'
+    elsif kkk[iii] == 'A'
+      kkk[iii] = 'U'
+    end
+  end
 end
-c=Rna.new
-k=gets.chomp
-c.r(k)  
+c = Rna.new
+k = gets.chomp
+c.r(k)
